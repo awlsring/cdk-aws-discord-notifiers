@@ -1,5 +1,2 @@
-export class Hello {
-  public sayHello() {
-    return 'hello, world!';
-  }
-}
+export * from './constructs/monthly-cost-notifier';
+export * from './lambdas/monthly-cost-lambda';
