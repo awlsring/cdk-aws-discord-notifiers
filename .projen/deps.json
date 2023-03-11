@@ -123,6 +123,10 @@
       "type": "bundled"
     },
     {
+      "name": "@types/pino",
+      "type": "bundled"
+    },
+    {
       "name": "axios",
       "type": "bundled"
     },
@@ -131,7 +135,7 @@
       "type": "bundled"
     },
     {
-      "name": "tslog",
+      "name": "pino",
       "type": "bundled"
     },
     {

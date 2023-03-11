@@ -1,4 +1,4 @@
-import { Logger } from 'tslog';
+import Pino from 'pino';
 
 export interface LoggerConfig {
   readonly name: string;
@@ -6,29 +6,29 @@ export interface LoggerConfig {
 }
 
 export function configureLogger(config: LoggerConfig) {
-  const logger = new Logger({ name: config.name, minLevel: 3 });
+  let level: string = 'info';
+  const logger = Pino({ name: config.name, level: 'info' });
 
   if (config.logLevel) {
-    let level: number = 3;
     switch (config.logLevel) {
       case 'info': {
-        level = 3;
+        level = 'info';
         break;
       }
       case 'debug': {
-        level = 2;
+        level = 'debug';
         break;
       }
       case 'trace': {
-        level = 1;
+        level = 'trace';
         break;
       }
       case 'warn': {
-        level = 4;
+        level = 'warn';
         break;
       }
       case 'error': {
-        level = 5;
+        level = 'error';
         break;
       }
       default: {
@@ -36,7 +36,9 @@ export function configureLogger(config: LoggerConfig) {
         break;
       }
     }
-    logger.settings.minLevel = level;
+    logger.info(`Setting log level to ${config.logLevel}`);
+
+    logger.level = level;
   }
   return logger;
 }

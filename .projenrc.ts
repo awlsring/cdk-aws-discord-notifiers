@@ -21,11 +21,10 @@ const project = new AwlsringAwsCdkLibrary({
   ],
   publish: true,
   bundledDeps: [
-    'tslog',
+    'pino',
+    '@types/pino',
     'node-fetch',
-    'axios',
     '@aws-sdk/client-cost-explorer',
   ],
 });
-
 project.synth();
