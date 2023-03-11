@@ -127,10 +127,6 @@
       "type": "bundled"
     },
     {
-      "name": "axios",
-      "type": "bundled"
-    },
-    {
       "name": "node-fetch",
       "type": "bundled"
     },
