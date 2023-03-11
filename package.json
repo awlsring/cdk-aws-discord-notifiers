@@ -3,7 +3,7 @@
   "description": "A package that vends constructs to notify about AWS resources via discord",
   "repository": {
     "type": "git",
-    "url": "https://github.com/awlsring/cdk-aws-billing-discord-notifiers.git"
+    "url": "https://github.com/awlsring/cdk-aws-discord-notifiers.git"
   },
   "scripts": {
     "build": "npx projen build",

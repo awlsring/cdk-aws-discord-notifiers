@@ -4,7 +4,7 @@ const project = new AwlsringAwsCdkLibrary({
   constructsVersion: '10.1.52',
   cdkVersion: '2.1.0',
   name: 'cdk-aws-discord-notifiers',
-  repositoryUrl: 'https://github.com/awlsring/cdk-aws-billing-discord-notifiers.git',
+  repositoryUrl: 'https://github.com/awlsring/cdk-aws-discord-notifiers.git',
   description: 'A package that vends constructs to notify about AWS resources via discord',
   keywords: [
     'discord',
