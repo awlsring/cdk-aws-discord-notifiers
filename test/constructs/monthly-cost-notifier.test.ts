@@ -11,7 +11,7 @@ describe('MonthlyCostNotifier', () => {
     const stack = new Stack(app, 'test');
 
     new MonthlyCostNotifier(stack, 'notifier', {
-      webhookToken: 'not a token',
+      webhook: 'not a webhook',
       accountId: '00000000',
     });
 
@@ -35,7 +35,7 @@ describe('MonthlyCostNotifier', () => {
     const stack = new Stack(app, 'test');
 
     new MonthlyCostNotifier(stack, 'notifier', {
-      webhookToken: 'not a token',
+      webhook: 'not a webhook',
       accountId: '00000000',
       ruleName: 'CustomRuleName',
       lambdaName: 'CustomFunctionName',

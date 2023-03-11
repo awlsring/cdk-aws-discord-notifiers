@@ -138,8 +138,9 @@ const monthlyCostNotifierProps: MonthlyCostNotifierProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountId">accountId</a></code> | <code>string</code> | The accountId this is being deployed to. |
-| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhookToken">webhookToken</a></code> | <code>string</code> | The webhook token to post to. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhook">webhook</a></code> | <code>string</code> | The webhook to post to. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaArchitecture">lambdaArchitecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The lambda architecture. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaLogLevel">lambdaLogLevel</a></code> | <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel">LogLevel</a></code> | The lambda log level. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaName">lambdaName</a></code> | <code>string</code> | The lambda name. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaRolePolicy">lambdaRolePolicy</a></code> | <code>aws-cdk-lib.aws_iam.Policy</code> | An additional policy to attach to the lambda. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.ruleName">ruleName</a></code> | <code>string</code> | The eventbridge rule name. |
@@ -159,15 +160,15 @@ The accountId this is being deployed to.
 
 ---
 
-##### `webhookToken`<sup>Required</sup> <a name="webhookToken" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhookToken"></a>
+##### `webhook`<sup>Required</sup> <a name="webhook" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhook"></a>
 
 ```typescript
-public readonly webhookToken: string;
+public readonly webhook: string;
 ```
 
 - *Type:* string
 
-The webhook token to post to.
+The webhook to post to.
 
 ---
 
@@ -181,6 +182,19 @@ public readonly lambdaArchitecture: Architecture;
 - *Default:* ARM_64
 
 The lambda architecture.
+
+---
+
+##### `lambdaLogLevel`<sup>Optional</sup> <a name="lambdaLogLevel" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaLogLevel"></a>
+
+```typescript
+public readonly lambdaLogLevel: LogLevel;
+```
+
+- *Type:* <a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel">LogLevel</a>
+- *Default:* MonthlyCostNotifier
+
+The lambda log level.
 
 ---
 
@@ -237,4 +251,44 @@ The eventbridge rule schedule.
 ---
 
 
+
+## Enums <a name="Enums" id="Enums"></a>
+
+### LogLevel <a name="LogLevel" id="@awlsring/cdk-aws-discord-notifiers.LogLevel"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel.TRACE">TRACE</a></code> | *No description.* |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel.DEBUG">DEBUG</a></code> | *No description.* |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel.INFO">INFO</a></code> | *No description.* |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel.WARN">WARN</a></code> | *No description.* |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel.ERROR">ERROR</a></code> | *No description.* |
+
+---
+
+##### `TRACE` <a name="TRACE" id="@awlsring/cdk-aws-discord-notifiers.LogLevel.TRACE"></a>
+
+---
+
+
+##### `DEBUG` <a name="DEBUG" id="@awlsring/cdk-aws-discord-notifiers.LogLevel.DEBUG"></a>
+
+---
+
+
+##### `INFO` <a name="INFO" id="@awlsring/cdk-aws-discord-notifiers.LogLevel.INFO"></a>
+
+---
+
+
+##### `WARN` <a name="WARN" id="@awlsring/cdk-aws-discord-notifiers.LogLevel.WARN"></a>
+
+---
+
+
+##### `ERROR` <a name="ERROR" id="@awlsring/cdk-aws-discord-notifiers.LogLevel.ERROR"></a>
+
+---
 

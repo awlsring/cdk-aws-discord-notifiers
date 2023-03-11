@@ -2,18 +2,19 @@ import { join } from 'path';
 import { Rule, Schedule } from 'aws-cdk-lib/aws-events';
 import { LambdaFunction } from 'aws-cdk-lib/aws-events-targets';
 import { Effect, Policy, PolicyStatement } from 'aws-cdk-lib/aws-iam';
-import { Architecture } from 'aws-cdk-lib/aws-lambda';
+import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
+import { LogLevel } from './log-levels';
 
 /**
  * Properties for a MonthlyCostNotifier.
  */
 export interface MonthlyCostNotifierProps {
   /**
-   * The webhook token to post to.
+   * The webhook to post to.
    */
-  readonly webhookToken: string;
+  readonly webhook: string;
   /**
    * The accountId this is being deployed to.
    */
@@ -36,6 +37,12 @@ export interface MonthlyCostNotifierProps {
    * @default MonthlyCostNotifier
    */
   readonly lambdaName?: string;
+  /**
+   * The lambda log level
+   *
+   * @default MonthlyCostNotifier
+   */
+  readonly lambdaLogLevel?: LogLevel;
   /**
    * An additional policy to attach to the lambda
    *
@@ -61,16 +68,18 @@ export class MonthlyCostNotifier extends Construct {
     super(scope, id);
 
     const lambda = new NodejsFunction(this, 'lambda', {
-      entry: join(__dirname, '../lambdas/monthly-cost-lambda.ts'),
+      entry: join(__dirname, '../../lambdas/monthly-cost-lambda.ts'),
       handler: 'lambdaHandler',
+      runtime: Runtime.NODEJS_18_X,
       functionName: props.lambdaName ?? 'MonthlyCostNotifier',
       architecture: props.lambdaArchitecture ?? Architecture.ARM_64,
       environment: {
-        TOKEN: props.webhookToken,
+        WEBHOOK: props.webhook,
         ACCOUNT_ID: props.accountId,
+        LOG_LEVEL: props.lambdaLogLevel ?? LogLevel.INFO,
       },
       bundling: {
-        minify: false,
+        externalModules: ['@aws-sdk'],
       },
     });
 
