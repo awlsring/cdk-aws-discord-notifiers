@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@actions/core": "^1.1.0",
-    "@awlsring/projen-commons": "^0.0.104",
+    "@awlsring/projen-commons": "^0.0.105",
     "@types/jest": "^27",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
@@ -58,7 +58,7 @@
     "jsii-docgen": "^7.2.9",
     "jsii-pacmak": "^1.80.0",
     "npm-check-updates": "^16",
-    "projen": "^0.71.34",
+    "projen": "^0.71.36",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
@@ -69,11 +69,11 @@
     "constructs": "^10.1.52"
   },
   "dependencies": {
-    "@aws-sdk/client-cost-explorer": "^3.321.1",
+    "@aws-sdk/client-cost-explorer": "^3.325.0",
     "@types/pino": "^7.0.5",
     "constructs": "^10.1.52",
     "node-fetch": "^3.3.1",
-    "pino": "^8.11.0"
+    "pino": "^8.12.0"
   },
   "bundledDependencies": [
     "@aws-sdk/client-cost-explorer",
