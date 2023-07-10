@@ -30,12 +30,12 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@awlsring/projen-commons@^0.0.172":
-  version "0.0.172"
-  resolved "https://registry.yarnpkg.com/@awlsring/projen-commons/-/projen-commons-0.0.172.tgz#b7afd634237cf97e1a385aabee8c20cbfba2b492"
-  integrity sha512-kVOTrYqBSg8TWBBRpzcwG2NS2dHJyLp82c3hAPH341QMo6bs5O1mhnRX4YfPKyxJC7HPq7PHesb3bWehwVfNtA==
+"@awlsring/projen-commons@^0.0.173":
+  version "0.0.173"
+  resolved "https://registry.yarnpkg.com/@awlsring/projen-commons/-/projen-commons-0.0.173.tgz#a516c25ce00afc596685dcdbb16c967e96221ee6"
+  integrity sha512-dPpscRKMHoLVEWphQx4pwpozzrEH1OVUC2QN6u3rNsg+gYVxBCOKLJTRkXEi4ROtZ50mTGhTgMAGibztr7OiIg==
   dependencies:
-    projen "^0.71.127"
+    projen "^0.71.128"
 
 "@aws-cdk/asset-awscli-v1@^2.2.30":
   version "2.2.200"
@@ -2552,9 +2552,9 @@ camelcase@^7.0.1:
   integrity sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==
 
 caniuse-lite@^1.0.30001503:
-  version "1.0.30001513"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001513.tgz#382fe5fbfb0f7abbaf8c55ca3ac71a0307a752e9"
-  integrity sha512-pnjGJo7SOOjAGytZZ203Em95MRM8Cr6jhCXNF/FAXTpCTRTECnqQWLpiTRqrFtdYcth8hf4WECUpkezuYsMVww==
+  version "1.0.30001514"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001514.tgz#e2a7e184a23affc9367b7c8d734e7ec4628c1309"
+  integrity sha512-ENcIpYBmwAAOm/V2cXgM7rZUrKKaqisZl4ZAI520FIkqGXUxJjmaIssbRW5HVVR5tyV6ygTLIm15aU8LUmQSaQ==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -6363,10 +6363,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.127, projen@^0.71.128:
-  version "0.71.128"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.128.tgz#ca44d20b444e57d1874511e13233ab0cceae6735"
-  integrity sha512-cnaaUnka1ZEoBnRzJlwncLTEr88IIPwENbYrsnVEe4ZAbGc4RWK1BKpnIfhyb5bdLBDiqeMFOmj+MQeW8sWx3w==
+projen@^0.71.128, projen@^0.71.129:
+  version "0.71.129"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.129.tgz#1039ea9b2e54b7dbe6140ceca32e52b5923ae163"
+  integrity sha512-nP+RN+rl8fvcdveq+MXG8tpV0ka22tvr2VtvZn3jhU1usIo2OicBN0TenF3sO39OLi4EP87NkCrmKjrusQ8RQw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
