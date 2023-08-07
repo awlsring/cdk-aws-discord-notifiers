@@ -30,12 +30,12 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@awlsring/projen-commons@^0.0.200":
-  version "0.0.200"
-  resolved "https://registry.yarnpkg.com/@awlsring/projen-commons/-/projen-commons-0.0.200.tgz#34fb79b073dc0e66dc1329ca042fd64b6d0b05b5"
-  integrity sha512-uBDhQ4lkWlpNyn3410W33GjdszQe+YAHmBM01hY/Qev0p0Y+uBdnSoM0+9sKweiUiaJB2ii+Z+mZUFyu8mvcUw==
+"@awlsring/projen-commons@^0.0.201":
+  version "0.0.201"
+  resolved "https://registry.yarnpkg.com/@awlsring/projen-commons/-/projen-commons-0.0.201.tgz#bf9f2e58a41350a5567f201d7ba65c531a75a28a"
+  integrity sha512-Dkn/bfNeNvS56C/K+78e9juW4rxTfOwKgVxDRUEAgTHkp4bICaugqLQH9T7zDmmEgGjP+LjWcJE219bksoGikA==
   dependencies:
-    projen "^0.72.2"
+    projen "^0.72.3"
 
 "@aws-cdk/asset-awscli-v1@^2.2.30":
   version "2.2.200"
@@ -2039,12 +2039,10 @@ agent-base@6, agent-base@^6.0.2:
     debug "4"
 
 agentkeepalive@^4.2.1:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-4.4.0.tgz#6304d7f60e503ecd7d39b43942f7698d77c60497"
-  integrity sha512-MysLRwkhsJTZKs+fsZIsTgBlr3IjQroonVJWMSqC9k3LS6f6ZifePl9fCqOtvc8p0CeYDSZVFvytdkwhOGaSZA==
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-4.5.0.tgz#2673ad1389b3c418c5a20c5d7364f93ca04be923"
+  integrity sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==
   dependencies:
-    debug "^4.1.0"
-    depd "^2.0.0"
     humanize-ms "^1.2.1"
 
 aggregate-error@^3.0.0:
@@ -3110,11 +3108,6 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==
-
-depd@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
-  integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
 
 detect-indent@^5.0.0:
   version "5.0.0"
@@ -6372,10 +6365,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.72.2, projen@^0.72.3:
-  version "0.72.3"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.3.tgz#df9d7eba5f596c1ed5c29c238996558bd9225c75"
-  integrity sha512-VFXCdJcPFDWH+VtVEPD30J5M+OCgRD6CWKqbKLghHP6aUMgZGPVdri7QKhxijpyNTvqMhjIptoYAXU2NO63x+g==
+projen@^0.72.3, projen@^0.72.4:
+  version "0.72.4"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.4.tgz#663e29bf75cbc4e62ab10f10a9950d276499fcdc"
+  integrity sha512-zbYq7NXKrkz9zb8wS6jgk2q6zNoap/bmHTKmwk3I/eAGeEXc2Rt06HkrjQ/z9LqTUbqwsk4YQU5wzY7IE8n5iw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
