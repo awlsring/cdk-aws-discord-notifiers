@@ -5,6 +5,7 @@ import { Effect, Policy, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
+import { LambdaOptions } from './lambda-options';
 import { LogLevel } from './log-levels';
 
 /**
@@ -18,7 +19,19 @@ export interface MonthlyCostNotifierProps {
   /**
    * The accountId this is being deployed to.
    */
-  readonly accountId: string;
+  readonly accountId?: string;
+  /**
+   * The name of the account this is being deployed to.
+   */
+  readonly accountName?: string;
+  /**
+   * User to post to the webhook as
+   */
+  readonly webhookUser?: string;
+  /**
+     * The user avatar to use
+     */
+  readonly webhookAvatar?: string;
   /**
    * The eventbridge rule name
    *
@@ -32,34 +45,14 @@ export interface MonthlyCostNotifierProps {
    */
   readonly ruleSchedule?: Schedule;
   /**
-   * The lambda name
-   *
-   * @default MonthlyCostNotifier
+   * options to configure the lambda
    */
-  readonly lambdaName?: string;
-  /**
-   * The lambda log level
-   *
-   * @default MonthlyCostNotifier
-   */
-  readonly lambdaLogLevel?: LogLevel;
-  /**
-   * An additional policy to attach to the lambda
-   *
-   * @default none
-   */
-  readonly lambdaRolePolicy?: Policy;
-  /**
-   * The lambda architecture
-   *
-   * @default ARM_64
-   */
-  readonly lambdaArchitecture?: Architecture;
+  readonly lambdaOptions?: LambdaOptions;
 }
 
 /**
  * A construct that creates a lambda function bundled with the 'monthly-notifier-lambda' code
- * This is trigger via eventbridge on a schedule to post to a discord webhook for the monthly costts
+ * This is trigger via eventbridge on a schedule to post to a discord webhook for the monthly costs
  *
  * WARNING: This lambda uses a pay per request API. Each call to cost explorer costs $0.01 USD.
  */
@@ -68,15 +61,18 @@ export class MonthlyCostNotifier extends Construct {
     super(scope, id);
 
     const lambda = new NodejsFunction(this, 'lambda', {
-      entry: join(__dirname, '../../lambdas/monthly-cost-lambda.ts'),
+      entry: join(__dirname, '../lambdas/monthly-cost-lambda.ts'),
       handler: 'lambdaHandler',
       runtime: Runtime.NODEJS_18_X,
-      functionName: props.lambdaName ?? 'MonthlyCostNotifier',
-      architecture: props.lambdaArchitecture ?? Architecture.ARM_64,
+      functionName: props.lambdaOptions?.name ?? 'MonthlyCostNotifier',
+      architecture: props.lambdaOptions?.architecture ?? Architecture.ARM_64,
       environment: {
         WEBHOOK: props.webhook,
-        ACCOUNT_ID: props.accountId,
-        LOG_LEVEL: props.lambdaLogLevel ?? LogLevel.INFO,
+        LOG_LEVEL: props.lambdaOptions?.logLevel ?? LogLevel.INFO,
+        WEBHOOK_USER: props.webhookUser ?? 'AWS Cost Reporter',
+        WEBHOOK_AVATAR: props.webhookAvatar ?? '',
+        AWS_ACCOUNT_ID: props.accountId ?? '',
+        AWS_ACCOUNT_NAME: props.accountId ?? '',
       },
       bundling: {
         externalModules: ['@aws-sdk'],
@@ -93,8 +89,8 @@ export class MonthlyCostNotifier extends Construct {
       ],
     }));
 
-    if (props.lambdaRolePolicy) {
-      lambda.role?.attachInlinePolicy(props.lambdaRolePolicy);
+    if (props.lambdaOptions?.rolePolicy) {
+      lambda.role?.attachInlinePolicy(props.lambdaOptions.rolePolicy);
     }
 
     const lambdaTarget = new LambdaFunction(lambda);

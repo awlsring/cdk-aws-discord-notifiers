@@ -24,6 +24,9 @@ const project = new AwlsringAwsCdkLibrary({
     'pino',
     '@types/pino',
     'node-fetch',
+    '@types/node-fetch',
+    'aws-lambda',
+    '@types/aws-lambda',
     '@aws-sdk/client-cost-explorer',
   ],
 });

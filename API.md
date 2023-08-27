@@ -1,10 +1,13 @@
 # AWS CDK Discord Notifier Constructs
 
-This is a CDK construct library the vends constructs used to notify via discord about resources in your CDK stack.
+This is a CDK construct library the vends constructs used to notify via discord about various resources and services.
 
 ## Constructs
 
-Currently a single construct is available, `MonthlyCostNotifier`. This construct will notify a discord webhook of the monthly billing for the account.
+The following constructs are available:
+
+`MonthlyCostNotifier` - This construct will notify a discord webhook with a formatted embed of the monthly billing for the account.
+`TrueNasAlertNotifier` - Creates resources to ingest a TrueNAS SNS alert by sending it to a lambda where it is parsed and sent to a discord webhook.
 
 ## Available Packages
 
@@ -51,7 +54,7 @@ dotnet add package awlsring.CdkAwsDiscordNotifiers
 
 ### MonthlyCostNotifier <a name="MonthlyCostNotifier" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifier"></a>
 
-A construct that creates a lambda function bundled with the 'monthly-notifier-lambda' code This is trigger via eventbridge on a schedule to post to a discord webhook for the monthly costts  WARNING: This lambda uses a pay per request API.
+A construct that creates a lambda function bundled with the 'monthly-notifier-lambda' code This is trigger via eventbridge on a schedule to post to a discord webhook for the monthly costs  WARNING: This lambda uses a pay per request API.
 
 Each call to cost explorer costs $0.01 USD.
 
@@ -166,7 +169,209 @@ The tree node.
 ---
 
 
+### TrueNasAlertNotifier <a name="TrueNasAlertNotifier" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier"></a>
+
+A construct that creates a series of resources that allows TrueNAS SNS alerts to be sent to a discord webhook.
+
+#### Initializers <a name="Initializers" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer"></a>
+
+```typescript
+import { TrueNasAlertNotifier } from '@awlsring/cdk-aws-discord-notifiers'
+
+new TrueNasAlertNotifier(scope: Construct, id: string, props: TrueNasAlertNotifierProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer.parameter.props">props</a></code> | <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps">TrueNasAlertNotifierProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps">TrueNasAlertNotifierProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.isConstruct"></a>
+
+```typescript
+import { TrueNasAlertNotifier } from '@awlsring/cdk-aws-discord-notifiers'
+
+TrueNasAlertNotifier.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifier.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
+
+### LambdaOptions <a name="LambdaOptions" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions"></a>
+
+#### Initializer <a name="Initializer" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions.Initializer"></a>
+
+```typescript
+import { LambdaOptions } from '@awlsring/cdk-aws-discord-notifiers'
+
+const lambdaOptions: LambdaOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The lambda architecture. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.logLevel">logLevel</a></code> | <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel">LogLevel</a></code> | The lambda log level. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.name">name</a></code> | <code>string</code> | The lambda name. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.rolePolicy">rolePolicy</a></code> | <code>aws-cdk-lib.aws_iam.Policy</code> | An additional policy to attach to the lambda. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The lambda runtime. |
+
+---
+
+##### `architecture`<sup>Optional</sup> <a name="architecture" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.architecture"></a>
+
+```typescript
+public readonly architecture: Architecture;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Architecture
+- *Default:* ARM_64
+
+The lambda architecture.
+
+---
+
+##### `logLevel`<sup>Optional</sup> <a name="logLevel" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.logLevel"></a>
+
+```typescript
+public readonly logLevel: LogLevel;
+```
+
+- *Type:* <a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel">LogLevel</a>
+- *Default:* INFO
+
+The lambda log level.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+- *Default:* TrueNasAlertNotifier
+
+The lambda name.
+
+---
+
+##### `rolePolicy`<sup>Optional</sup> <a name="rolePolicy" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.rolePolicy"></a>
+
+```typescript
+public readonly rolePolicy: Policy;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Policy
+- *Default:* none
+
+An additional policy to attach to the lambda.
+
+---
+
+##### `runtime`<sup>Optional</sup> <a name="runtime" id="@awlsring/cdk-aws-discord-notifiers.LambdaOptions.property.runtime"></a>
+
+```typescript
+public readonly runtime: Runtime;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Runtime
+- *Default:* NODES_LATEST
+
+The lambda runtime.
+
+---
 
 ### MonthlyCostNotifierProps <a name="MonthlyCostNotifierProps" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps"></a>
 
@@ -184,26 +389,14 @@ const monthlyCostNotifierProps: MonthlyCostNotifierProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountId">accountId</a></code> | <code>string</code> | The accountId this is being deployed to. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhook">webhook</a></code> | <code>string</code> | The webhook to post to. |
-| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaArchitecture">lambdaArchitecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The lambda architecture. |
-| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaLogLevel">lambdaLogLevel</a></code> | <code><a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel">LogLevel</a></code> | The lambda log level. |
-| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaName">lambdaName</a></code> | <code>string</code> | The lambda name. |
-| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaRolePolicy">lambdaRolePolicy</a></code> | <code>aws-cdk-lib.aws_iam.Policy</code> | An additional policy to attach to the lambda. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountId">accountId</a></code> | <code>string</code> | The accountId this is being deployed to. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountName">accountName</a></code> | <code>string</code> | The name of the account this is being deployed to. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaOptions">lambdaOptions</a></code> | <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions">LambdaOptions</a></code> | options to configure the lambda. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.ruleName">ruleName</a></code> | <code>string</code> | The eventbridge rule name. |
 | <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.ruleSchedule">ruleSchedule</a></code> | <code>aws-cdk-lib.aws_events.Schedule</code> | The eventbridge rule schedule. |
-
----
-
-##### `accountId`<sup>Required</sup> <a name="accountId" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountId"></a>
-
-```typescript
-public readonly accountId: string;
-```
-
-- *Type:* string
-
-The accountId this is being deployed to.
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhookAvatar">webhookAvatar</a></code> | <code>string</code> | The user avatar to use. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhookUser">webhookUser</a></code> | <code>string</code> | User to post to the webhook as. |
 
 ---
 
@@ -219,55 +412,39 @@ The webhook to post to.
 
 ---
 
-##### `lambdaArchitecture`<sup>Optional</sup> <a name="lambdaArchitecture" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaArchitecture"></a>
+##### `accountId`<sup>Optional</sup> <a name="accountId" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountId"></a>
 
 ```typescript
-public readonly lambdaArchitecture: Architecture;
-```
-
-- *Type:* aws-cdk-lib.aws_lambda.Architecture
-- *Default:* ARM_64
-
-The lambda architecture.
-
----
-
-##### `lambdaLogLevel`<sup>Optional</sup> <a name="lambdaLogLevel" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaLogLevel"></a>
-
-```typescript
-public readonly lambdaLogLevel: LogLevel;
-```
-
-- *Type:* <a href="#@awlsring/cdk-aws-discord-notifiers.LogLevel">LogLevel</a>
-- *Default:* MonthlyCostNotifier
-
-The lambda log level.
-
----
-
-##### `lambdaName`<sup>Optional</sup> <a name="lambdaName" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaName"></a>
-
-```typescript
-public readonly lambdaName: string;
+public readonly accountId: string;
 ```
 
 - *Type:* string
-- *Default:* MonthlyCostNotifier
 
-The lambda name.
+The accountId this is being deployed to.
 
 ---
 
-##### `lambdaRolePolicy`<sup>Optional</sup> <a name="lambdaRolePolicy" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaRolePolicy"></a>
+##### `accountName`<sup>Optional</sup> <a name="accountName" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.accountName"></a>
 
 ```typescript
-public readonly lambdaRolePolicy: Policy;
+public readonly accountName: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_iam.Policy
-- *Default:* none
+- *Type:* string
 
-An additional policy to attach to the lambda.
+The name of the account this is being deployed to.
+
+---
+
+##### `lambdaOptions`<sup>Optional</sup> <a name="lambdaOptions" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.lambdaOptions"></a>
+
+```typescript
+public readonly lambdaOptions: LambdaOptions;
+```
+
+- *Type:* <a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions">LambdaOptions</a>
+
+options to configure the lambda.
 
 ---
 
@@ -294,6 +471,138 @@ public readonly ruleSchedule: Schedule;
 - *Default:* { minute: '0', hour: '15', day: '1', month: '*', year: '*' }
 
 The eventbridge rule schedule.
+
+---
+
+##### `webhookAvatar`<sup>Optional</sup> <a name="webhookAvatar" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhookAvatar"></a>
+
+```typescript
+public readonly webhookAvatar: string;
+```
+
+- *Type:* string
+
+The user avatar to use.
+
+---
+
+##### `webhookUser`<sup>Optional</sup> <a name="webhookUser" id="@awlsring/cdk-aws-discord-notifiers.MonthlyCostNotifierProps.property.webhookUser"></a>
+
+```typescript
+public readonly webhookUser: string;
+```
+
+- *Type:* string
+
+User to post to the webhook as.
+
+---
+
+### TrueNasAlertNotifierProps <a name="TrueNasAlertNotifierProps" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps"></a>
+
+#### Initializer <a name="Initializer" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.Initializer"></a>
+
+```typescript
+import { TrueNasAlertNotifierProps } from '@awlsring/cdk-aws-discord-notifiers'
+
+const trueNasAlertNotifierProps: TrueNasAlertNotifierProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.webhook">webhook</a></code> | <code>string</code> | The webhook to post to. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.createIamRole">createIamRole</a></code> | <code>boolean</code> | If an IAM role should be created TrueNAS to post to the SNS topic. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.displayCurrentAlerts">displayCurrentAlerts</a></code> | <code>boolean</code> | If current alerts should be displayed in embed. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.lambdaOptions">lambdaOptions</a></code> | <code><a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions">LambdaOptions</a></code> | options to configure the lambda. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.truenasUrl">truenasUrl</a></code> | <code>string</code> | The URL of the truenas instance. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.webhookAvatar">webhookAvatar</a></code> | <code>string</code> | The user avatar to use. |
+| <code><a href="#@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.webhookUser">webhookUser</a></code> | <code>string</code> | User to post to the webhook as. |
+
+---
+
+##### `webhook`<sup>Required</sup> <a name="webhook" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.webhook"></a>
+
+```typescript
+public readonly webhook: string;
+```
+
+- *Type:* string
+
+The webhook to post to.
+
+---
+
+##### `createIamRole`<sup>Optional</sup> <a name="createIamRole" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.createIamRole"></a>
+
+```typescript
+public readonly createIamRole: boolean;
+```
+
+- *Type:* boolean
+
+If an IAM role should be created TrueNAS to post to the SNS topic.
+
+---
+
+##### `displayCurrentAlerts`<sup>Optional</sup> <a name="displayCurrentAlerts" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.displayCurrentAlerts"></a>
+
+```typescript
+public readonly displayCurrentAlerts: boolean;
+```
+
+- *Type:* boolean
+
+If current alerts should be displayed in embed.
+
+---
+
+##### `lambdaOptions`<sup>Optional</sup> <a name="lambdaOptions" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.lambdaOptions"></a>
+
+```typescript
+public readonly lambdaOptions: LambdaOptions;
+```
+
+- *Type:* <a href="#@awlsring/cdk-aws-discord-notifiers.LambdaOptions">LambdaOptions</a>
+
+options to configure the lambda.
+
+---
+
+##### `truenasUrl`<sup>Optional</sup> <a name="truenasUrl" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.truenasUrl"></a>
+
+```typescript
+public readonly truenasUrl: string;
+```
+
+- *Type:* string
+
+The URL of the truenas instance.
+
+---
+
+##### `webhookAvatar`<sup>Optional</sup> <a name="webhookAvatar" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.webhookAvatar"></a>
+
+```typescript
+public readonly webhookAvatar: string;
+```
+
+- *Type:* string
+
+The user avatar to use.
+
+---
+
+##### `webhookUser`<sup>Optional</sup> <a name="webhookUser" id="@awlsring/cdk-aws-discord-notifiers.TrueNasAlertNotifierProps.property.webhookUser"></a>
+
+```typescript
+public readonly webhookUser: string;
+```
+
+- *Type:* string
+
+User to post to the webhook as.
 
 ---
 

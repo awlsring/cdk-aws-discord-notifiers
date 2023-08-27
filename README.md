@@ -1,10 +1,13 @@
 # AWS CDK Discord Notifier Constructs
 
-This is a CDK construct library the vends constructs used to notify via discord about resources in your CDK stack.
+This is a CDK construct library the vends constructs used to notify via discord about various resources and services.
 
 ## Constructs
 
-Currently a single construct is available, `MonthlyCostNotifier`. This construct will notify a discord webhook of the monthly billing for the account.
+The following constructs are available:
+
+`MonthlyCostNotifier` - This construct will notify a discord webhook with a formatted embed of the monthly billing for the account.
+`TrueNasAlertNotifier` - Creates resources to ingest a TrueNAS SNS alert by sending it to a lambda where it is parsed and sent to a discord webhook.
 
 ## Available Packages
 

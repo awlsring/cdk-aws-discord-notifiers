@@ -129,7 +129,19 @@
       "type": "bundled"
     },
     {
+      "name": "@types/aws-lambda",
+      "type": "bundled"
+    },
+    {
+      "name": "@types/node-fetch",
+      "type": "bundled"
+    },
+    {
       "name": "@types/pino",
+      "type": "bundled"
+    },
+    {
+      "name": "aws-lambda",
       "type": "bundled"
     },
     {

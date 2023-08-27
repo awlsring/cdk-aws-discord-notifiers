@@ -38,9 +38,11 @@ describe('MonthlyCostNotifier', () => {
       webhook: 'not a webhook',
       accountId: '00000000',
       ruleName: 'CustomRuleName',
-      lambdaName: 'CustomFunctionName',
+      lambdaOptions: {
+        name: 'CustomFunctionName',
+        architecture: Architecture.X86_64,
+      },
       ruleSchedule: Schedule.cron({ minute: '0', hour: '16', day: '1', month: '*', year: '*' }),
-      lambdaArchitecture: Architecture.X86_64,
     });
 
     const template = Template.fromStack(stack);
