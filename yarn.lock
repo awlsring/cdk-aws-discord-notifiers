@@ -30,12 +30,12 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@awlsring/projen-commons@^0.0.220":
-  version "0.0.220"
-  resolved "https://registry.yarnpkg.com/@awlsring/projen-commons/-/projen-commons-0.0.220.tgz#5b851e4d308a1d5455500ece819c31d8ea4b515f"
-  integrity sha512-ovk6rA9EjglmXOweKMrHiBhOZjaZYJdcNc8qHNb2cRKjz8p9So4mpuj4h2rt88Syevw1D/uos1Un9pqRuek07w==
+"@awlsring/projen-commons@^0.0.221":
+  version "0.0.221"
+  resolved "https://registry.yarnpkg.com/@awlsring/projen-commons/-/projen-commons-0.0.221.tgz#11702957da4e6007bbdca5bd8ae8095572c9a94b"
+  integrity sha512-ArtrDcf1yfsMrzuAJDMQfmB9KppJbdHR89dEwoJxEpF75py6TNjM01qABXoEc99jxyLDEsN8TmPMZ//5EfIwrg==
   dependencies:
-    projen "^0.72.23"
+    projen "^0.72.24"
 
 "@aws-cdk/asset-awscli-v1@^2.2.30":
   version "2.2.200"
@@ -6306,10 +6306,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.72.23, projen@^0.72.24:
-  version "0.72.24"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.24.tgz#c628538dd55fdd3264be1f3dd6f4ceb8e59be60f"
-  integrity sha512-q6d6wSxuIqNQVEcVYebPLSqcXcCoQ3fh7L+i/INQeS+gBSO/Z8xy+oNq1tfw7HZy2hIyXGwFTKoJS5SIIDypwA==
+projen@^0.72.24, projen@^0.72.25:
+  version "0.72.25"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.25.tgz#b6af8378b5421fc675860996e77224797eebacde"
+  integrity sha512-mu9FQIz8drJYrymPihzNFljRnBZm5+uZRTOwwJ3VCRINE45Av/FCB6O21qd0sUpos7ijDXTyN8s4VCS+tSFqFA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
