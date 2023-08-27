@@ -61,7 +61,7 @@ export class MonthlyCostNotifier extends Construct {
     super(scope, id);
 
     const lambda = new NodejsFunction(this, 'lambda', {
-      entry: join(__dirname, '../lambdas/monthly-cost-lambda.ts'),
+      entry: join(__dirname, '../../lambdas/monthly-cost-lambda.ts'),
       handler: 'lambdaHandler',
       runtime: Runtime.NODEJS_18_X,
       functionName: props.lambdaOptions?.name ?? 'MonthlyCostNotifier',
@@ -72,7 +72,7 @@ export class MonthlyCostNotifier extends Construct {
         WEBHOOK_USER: props.webhookUser ?? 'AWS Cost Reporter',
         WEBHOOK_AVATAR: props.webhookAvatar ?? '',
         AWS_ACCOUNT_ID: props.accountId ?? '',
-        AWS_ACCOUNT_NAME: props.accountId ?? '',
+        AWS_ACCOUNT_NAME: props.accountName ?? '',
       },
       bundling: {
         externalModules: ['@aws-sdk'],

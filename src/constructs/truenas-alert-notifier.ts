@@ -57,7 +57,7 @@ export class TrueNasAlertNotifier extends Construct {
     topic.addSubscription(new SqsSubscription(queue));
 
     const discordWebhook = new NodejsFunction(this, 'lambda', {
-      entry: path.join(__dirname, '../lambdas/truenas-notifier-lambda.ts'),
+      entry: path.join(__dirname, '../../lambdas/truenas-notifier-lambda.ts'),
       handler: 'lambdaHandler',
       runtime: Runtime.NODEJS_18_X,
       functionName: props?.lambdaOptions?.name ?? 'TrueNasAlertNotifier',
