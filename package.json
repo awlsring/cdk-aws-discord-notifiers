@@ -54,9 +54,9 @@
     "jest": "^27",
     "jest-junit": "^15",
     "jsii": "1.x",
-    "jsii-diff": "^1.90.0",
+    "jsii-diff": "^1.91.0",
     "jsii-docgen": "^7.2.9",
-    "jsii-pacmak": "^1.90.0",
+    "jsii-pacmak": "^1.91.0",
     "jsii-rosetta": "1.x",
     "npm-check-updates": "^16",
     "projen": "^0.73.7",
@@ -70,7 +70,7 @@
     "constructs": "^10.1.52"
   },
   "dependencies": {
-    "@aws-sdk/client-cost-explorer": "^3.433.0",
+    "@aws-sdk/client-cost-explorer": "^3.435.0",
     "@types/aws-lambda": "^8.10.125",
     "@types/node-fetch": "^2.6.7",
     "@types/pino": "^7.0.5",
