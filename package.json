@@ -70,7 +70,7 @@
     "constructs": "^10.1.52"
   },
   "dependencies": {
-    "@aws-sdk/client-cost-explorer": "^3.461.0",
+    "@aws-sdk/client-cost-explorer": "^3.462.0",
     "@types/aws-lambda": "^8.10.129",
     "@types/node-fetch": "^2.6.9",
     "@types/pino": "^7.0.5",
